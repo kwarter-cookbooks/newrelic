@@ -9,7 +9,7 @@ include_recipe "python::pip"
 
 #install latest python agent
 python_pip "newrelic" do
-    action :install
+    action :upgrade
     if node[:newrelic][:python_version] != "latest"
         version "#{node[:newrelic][:python_version]}"
     end
