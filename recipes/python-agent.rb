@@ -37,7 +37,8 @@ template "/etc/newrelic/newrelic.ini" do
         :transaction_tracer_slow_sql => node[:newrelic][:application_monitoring][:transaction_tracer][:slow_sql],
         :transaction_tracer_explain_threshold => node[:newrelic][:application_monitoring][:transaction_tracer][:explain_threshold],
         :error_collector_enable => node[:newrelic][:application_monitoring][:error_collector][:enable],
-        :browser_monitoring_auto_instrument => node[:newrelic][:application_monitoring][:browser_monitoring][:auto_instrument]
+        :browser_monitoring_auto_instrument => node[:newrelic][:application_monitoring][:browser_monitoring][:auto_instrument],
+        :framework => node[:newrelic][:application_monitoring][:framework],
     )
     action :create
 end

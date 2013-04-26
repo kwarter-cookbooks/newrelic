@@ -240,6 +240,12 @@ thread_profiler.enabled = true
 # "development", "test", "staging" or "production".
 #
 
+<% if @framework == 'pyramid' %>
+[import-hook:pyramid.router]
+enabled = true
+execute = newrelic.hooks.framework_pyramid:instrument_pyramid_router
+<% end %>
+
 [newrelic:development]
 monitor_mode = false
 
